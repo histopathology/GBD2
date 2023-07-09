@@ -22,7 +22,7 @@
 files=( $(find ./ -type f) )   # Find all files in the current directory and subdirectories
 # files=( $(find ./CD3_files -type f) )
 
-batch_size=5000                 # Define the batch size
+batch_size=2000                 # Define the batch size
 total_files=${#files[@]}       # Get total number of files
 batches=$((($total_files + $batch_size - 1) / $batch_size))
 
@@ -60,5 +60,5 @@ do
   git push origin
   echo "Pushed files from $start to $end. There are $total_files files in total."
   echo "Batch number $((i+1)) has been processed."
-  sleep 20
+  sleep 30
 done
